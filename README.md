@@ -1,4 +1,5 @@
-ud120-projects
-==============
+NLP Email Text Classifier
+=========================
 
-Starter project code for students taking Udacity ud120
+Machine Learning (ML) implementation of Natural Language Processing (NLP) using scikit-learn
+Naive Bayes algorithm and NLTK
