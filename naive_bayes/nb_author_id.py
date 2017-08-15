@@ -2,11 +2,9 @@
 
 
 """
-    This is the code to accompany the Lesson 1 (Naive Bayes) mini-project.
+    Naive Bayes classifier identifies emails by their authors
 
-    Use a Naive Bayes Classifier to identify emails by their authors
-
-    authors and labels:
+    Authors and labels:
     Sara has label 0
     Chris has label 1
 """
@@ -17,9 +15,6 @@ sys.path.append("../tools/")
 from email_preprocess import preprocess
 
 import numpy as np
-from sklearn.naive_bayes import BernoulliNB
-from sklearn.svm import SVC
-
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
@@ -29,30 +24,23 @@ from sklearn.metrics import accuracy_score
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
-#print labels_train
-#print features_train
-
-
 
 #########################################################
 ### your code goes here ###
 
 t0 = time()
-
 clf = GaussianNB()
 clf.fit(features_train, labels_train)
 
 print "training time:", round(time()-t0, 3), "s"
 
-t0 = time()
-
+t1 = time()
 pred = clf.predict(features_test)
-
-print "prediction time:", round(time()-t0, 3), "s"
+print "prediction time:", round(time()-t1, 3), "s"
 
 accuracy = accuracy_score(pred, labels_test)
 
-print accuracy
+print "accuracy: %s" %("{:.2f}".format(accuracy * 100)),"%"
 
 #########################################################
 
