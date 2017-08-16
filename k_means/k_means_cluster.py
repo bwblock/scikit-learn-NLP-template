@@ -8,6 +8,8 @@ import pickle
 import numpy
 import matplotlib.pyplot as plt
 import sys
+from sklearn.cluster import KMeans
+
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
@@ -29,7 +31,6 @@ def Draw(pred, features, poi, mark_poi=False, name="image.png", f1_name="feature
     plt.ylabel(f2_name)
     plt.savefig(name)
     plt.show()
-
 
 
 ### load in the dict of dicts containing all the data on each person in the dataset
@@ -61,6 +62,8 @@ plt.show()
 
 
 
+
+pred = KMeans(n_clusters=2, init='random').fit_predict(data)
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
