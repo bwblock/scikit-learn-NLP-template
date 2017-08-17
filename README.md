@@ -1,5 +1,4 @@
-NLP Email Text Classifier
+Working Examples and Templates for Machine Learning using Python + SKlearn
 =========================
 
-Machine Learning (ML) implementation of Natural Language Processing (NLP) using scikit-learn
-Naive Bayes algorithm and NLTK
+Includes implementation of Natural Language Processing (NLP) using NLTK
