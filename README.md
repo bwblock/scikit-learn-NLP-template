@@ -1,4 +1,4 @@
-Working Examples and Templates for Machine Learning using Python + SKlearn
+Tested by bwblock examples and templates for machine learning using python + sklearn
 =========================
 
-Includes implementation of Natural Language Processing (NLP) using NLTK
+Includes implementation of natural language processing (NLP) using NLTK
