@@ -21,7 +21,6 @@ from sklearn.metrics import accuracy_score
 features_train, features_test, labels_train, labels_test = preprocess()
 
 
-
 #features_train = features_train[:len(features_train)/100]
 #labels_train = labels_train[:len(labels_train)/100]
 #########################################################
@@ -36,7 +35,10 @@ print "training time:", round(time()-t0, 3), "s"
 t1 = time()
 pred = clf.predict(features_test)
 print "prediction time:", round(time()-t1, 3), "s"
-
+print pred[10]
+print pred[26]
+print pred[50]
+print sum(pred), "number of predicted emails from Chris"
 
 acc = accuracy_score(pred, labels_test)
 

@@ -7,6 +7,9 @@
     Authors and labels:
     Sara has label 0
     Chris has label 1
+
+    Naive Bayes is great for text--it’s faster and generally gives better performance than an SVM
+
 """
 
 import sys
