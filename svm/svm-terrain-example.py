@@ -10,6 +10,7 @@ import copy
 import numpy as np
 import pylab as pl
 
+from sklearn.metrics import accuracy_score
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -38,7 +39,6 @@ pred = clf.predict(features_test)
 #   Low C parameter makes the decision boundary smooth.
 
 
-from sklearn.metrics import accuracy_score
 acc = accuracy_score(pred, labels_test)
 
 print acc
