@@ -1,0 +1,6 @@
+Last login: Fri Aug 18 12:07:51 on ttys001
+Brians-Macbook-Pro-4:~ bwblock$ /var/folders/4p/2wymvnnn0254gmckz44_0c3h0000gp/T/com.barebones.textwrangler-524772484.488-env.sh ; exit;
+training time: 0.003 s
+prediction time: 0.004 s
+accuracy: 94.00 %
+logout
