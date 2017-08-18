@@ -41,8 +41,6 @@ accuracy = accuracy_score(pred, labels_test)
 print "accuracy: %s" %("{:.2f}".format(accuracy * 100)),"%"
 
 
-
-
 #########################################################
 
 
