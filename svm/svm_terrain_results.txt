@@ -1,0 +1,5 @@
+Brians-Macbook-Pro-4:~ bwblock$ /var/folders/4p/2wymvnnn0254gmckz44_0c3h0000gp/T/com.barebones.textwrangler-524772858.085-env.sh ; exit;
+training time: 0.047 s
+prediction time: 0.004 s
+accuracy: 94.40 %
+logout

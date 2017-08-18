@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 import copy
 import numpy as np
 import pylab as pl
-
+from time import time
+from sklearn import svm
 from sklearn.metrics import accuracy_score
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
@@ -27,21 +28,21 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 
 #### store your predictions in a list named pred
 
-
-from sklearn import svm
-
+t0=time()
 clf = svm.SVC(kernel="rbf", gamma=500, C=1.0)
 clf.fit(features_train, labels_train)
+print "training time:", round(time()-t0, 3), "s"
 
+t1=time()
 pred = clf.predict(features_test)
+print "prediction time:", round(time()-t1, 3), "s"
 
 
 #   Low C parameter makes the decision boundary smooth.
 
+accuracy = accuracy_score(pred, labels_test)
 
-acc = accuracy_score(pred, labels_test)
-
-print acc
+print "accuracy: %s" %("{:.2f}".format(accuracy * 100)),"%"
 
 #def submitAccuracy():
 #    return acc
