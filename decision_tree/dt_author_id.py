@@ -25,7 +25,7 @@ from sklearn.metrics import accuracy_score
 features_train, features_test, labels_train, labels_test = preprocess()
 
 
-print len(features_train[0])
+#print len(features_train[0])
 
 #########################################################
 ### your code goes here ###
