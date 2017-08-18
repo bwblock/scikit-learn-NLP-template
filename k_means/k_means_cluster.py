@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 """
-    Template code for k-means clustering mini-project.
+ Template code for k-means clustering mini-project.
 """
 
 import pickle
