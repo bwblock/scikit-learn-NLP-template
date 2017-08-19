@@ -5,8 +5,9 @@ import matplotlib
 # matplotlib.use('agg')
 
 import matplotlib.pyplot as plt
-from studentRegression import studentReg
+#from studentRegression import studentReg
 from class_vis import prettyPicture, output_image
+from sklearn import linear_model
 
 from age_net_worth_data import ages_train, net_worths_train, ages_test, net_worths_test
 
@@ -14,10 +15,20 @@ from age_net_worth_data import ages_train, net_worths_train, ages_test, net_wort
 
 #ages_train, ages_test, net_worths_train, net_worths_test = ageNetWorthData()
 
+def studentReg(ages_train, net_worths_train):
 
+    reg = linear_model.LinearRegression()
+    reg.fit (ages_train, net_worths_train)
+    return reg
 
 reg = studentReg(ages_train, net_worths_train)
 
+print "slope: ", reg.coef_
+print "intercept: ", reg.intercept_
+
+print "r-squared score test: ", reg.score(ages_test, net_worths_test)
+
+print "r-squared train: ", reg.score(ages_train, net_worths_train)
 
 plt.clf()
 plt.scatter(ages_train, net_worths_train, color="b", label="train data")
@@ -30,3 +41,7 @@ plt.ylabel("net worths")
 
 plt.savefig("test.png")
 output_image("test.png", "png", open("test.png", "rb").read())
+
+
+
+
