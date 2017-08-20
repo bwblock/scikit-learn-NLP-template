@@ -27,7 +27,6 @@ print "slope: ", reg.coef_
 print "intercept: ", reg.intercept_
 
 print "r-squared score test: ", reg.score(ages_test, net_worths_test)
-
 print "r-squared train: ", reg.score(ages_train, net_worths_train)
 
 plt.clf()
