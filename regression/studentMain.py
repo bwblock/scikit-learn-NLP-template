@@ -26,8 +26,17 @@ reg = studentReg(ages_train, net_worths_train)
 print "slope: ", reg.coef_
 print "intercept: ", reg.intercept_
 
+# ------------------   R-square values ---------------------- #
+
 print "r-squared score test: ", reg.score(ages_test, net_worths_test)
-print "r-squared train: ", reg.score(ages_train, net_worths_train)
+print "r-squared score train: ", reg.score(ages_train, net_worths_train)
+
+# -------------------------- predictions ------------- "
+
+print reg.predict([27])
+
+
+
 
 plt.clf()
 plt.scatter(ages_train, net_worths_train, color="b", label="train data")
