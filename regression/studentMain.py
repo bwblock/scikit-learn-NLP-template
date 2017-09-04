@@ -21,6 +21,8 @@ def studentReg(ages_train, net_worths_train):
     reg.fit (ages_train, net_worths_train)
     return reg
 
+print ages_train
+
 reg = studentReg(ages_train, net_worths_train)
 
 print "slope: ", reg.coef_
