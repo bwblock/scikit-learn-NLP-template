@@ -5,6 +5,13 @@ import pickle
 import re
 import sys
 
+import nltk
+import string
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+from nltk.stem.porter import PorterStemmer
+
 sys.path.append( "../tools/" )
 from parse_out_email_text import parseOutText
 
@@ -51,14 +58,13 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             text = parseOutText(email)
 
 
-
             ### use str.replace() to remove any instances of the words
             sig_words = ["sara", "shackleton", "chris", "germani"]
 
             for word in sig_words:
                 text = text.replace(word,'')
 
-#            print text
+
             ### append the text to word_data
 
             word_data.append(text)
@@ -72,7 +78,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 
             email.close()
 
-print word_data[152]
+print len(word_data)
 #print from_data
 print "emails processed"
 from_sara.close()
@@ -83,8 +89,23 @@ pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
 
 
-
-
 ### in Part 4, do TfIdf vectorization here
+
+vectorizer = TfidfVectorizer(stop_words="english", lowercase=True)
+vectorizer.fit_transform(word_data)
+
+print "Unit 10-20: How many unique words are in your TfIdf?"
+vocab_list = vectorizer.get_feature_names()
+print len(vocab_list)
+#print vocab_list[34597]
+
+
+###  Bag-of-Words Vectorizer
+vectorizer = CountVectorizer(stop_words="english", lowercase=True)
+bag_of_words = vectorizer.fit(word_data)
+bag_of_words = vectorizer.transform(word_data)
+print bag_of_words
+
+
 
 
