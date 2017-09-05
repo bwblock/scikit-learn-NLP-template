@@ -28,6 +28,7 @@ def parseOutText(f):
         text_string = content[1].translate(string.maketrans("", ""), string.punctuation)
 
         ### project part 2: comment out the line below
+
 #    words = text_string
     wordlist = text_string.split()
         ### split the text string into individual words, stem each word,
@@ -35,9 +36,9 @@ def parseOutText(f):
         ### space between each stemmed word)
 
 
+    word_stems = [stemmer.stem(x) for x in wordlist]
 
-
-    words = [stemmer.stem(x) for x in wordlist]
+    words = ' '.join(word_stems)
     return words
 
 

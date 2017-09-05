@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! /usr/bin/env python
 
 import os
 import pickle
@@ -48,17 +48,32 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             email = open(path, "r")
 
             ### use parseOutText to extract the text from the opened email
+            text = parseOutText(email)
+
+
 
             ### use str.replace() to remove any instances of the words
-            ### ["sara", "shackleton", "chris", "germani"]
+            sig_words = ["sara", "shackleton", "chris", "germani"]
 
+            for word in sig_words:
+                text = text.replace(word,'')
+
+#            print text
             ### append the text to word_data
 
-            ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
+            word_data.append(text)
 
+            ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
+            print name
+            if name == "sara":
+                from_data.append(0)
+            if name == "chris":
+                from_data.append(1)
 
             email.close()
 
+print word_data[152]
+#print from_data
 print "emails processed"
 from_sara.close()
 from_chris.close()
