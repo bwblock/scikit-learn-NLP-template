@@ -88,10 +88,12 @@ pickle.dump( word_data, open("your_word_data.pkl", "w") )
 pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
 
-
-### in Part 4, do TfIdf vectorization here
+###         in Part 4, do TfIdf vectorization here   ###
 
 vectorizer = TfidfVectorizer(stop_words="english", lowercase=True)
+
+#  reduce features using feature selection
+#vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5,stop_words="english")
 vectorizer.fit_transform(word_data)
 
 print "Unit 10-20: How many unique words are in your TfIdf?"
