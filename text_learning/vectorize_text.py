@@ -49,7 +49,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         ### only look at first 200 emails when developing
         ### once everything is working, remove this line to run over full dataset
         temp_counter += 1
-        if temp_counter: # < 200:
+        if temp_counter < 200:
             path = os.path.join('..', path[:-1])
 #            print path
             email = open(path, "r")
@@ -64,7 +64,6 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             for word in sig_words:
                 text = text.replace(word,'')
 
-
             ### append the text to word_data
 
             word_data.append(text)
@@ -78,9 +77,14 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 
             email.close()
 
-print len(word_data)
-#print from_data
+
+
 print "emails processed"
+
+print "number of emails"
+print len(word_data)
+print word_data[152]   #quiz answer
+
 from_sara.close()
 from_chris.close()
 
