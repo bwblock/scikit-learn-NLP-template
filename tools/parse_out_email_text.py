@@ -16,6 +16,8 @@ def parseOutText(f):
 
         """
 
+# ------------ deploy stemming -------------------#
+
     stemmer = SnowballStemmer("english")
     f.seek(0)  ### go back to beginning of file (annoying)
     all_text = f.read()
