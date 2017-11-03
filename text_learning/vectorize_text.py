@@ -49,7 +49,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         ### only look at first 200 emails when developing
         ### once everything is working, remove this line to run over full dataset
         temp_counter += 1
-        if temp_counter < 200:
+        if temp_counter: # < 200:
             path = os.path.join('..', path[:-1])
 #            print path
             email = open(path, "r")
@@ -83,7 +83,7 @@ print "emails processed"
 
 print "number of emails"
 print len(word_data)
-print word_data[152]   #quiz answer
+print word_data[152]   ### Quiz Answer ###
 
 from_sara.close()
 from_chris.close()
@@ -103,7 +103,7 @@ vectorizer.fit_transform(word_data)
 print "Unit 10-20: How many unique words are in your TfIdf?"
 vocab_list = vectorizer.get_feature_names()
 print len(vocab_list)
-#print vocab_list[34597]
+print vocab_list[34597]
 
 
 ###  Bag-of-Words Vectorizer
