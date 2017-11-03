@@ -15,20 +15,20 @@ def preprocess(words_file = "../tools/word_data.pkl", authors_file="../tools/ema
         this function takes a pre-made list of email texts (by default word_data.pkl)
         and the corresponding authors (by default email_authors.pkl) and performs
         a number of preprocessing steps:
-            -- splits into training/testing sets (10% testing)
-            -- vectorizes into tfidf matrix
-            -- selects/keeps most helpful features
+            --> splits into training/testing sets (10% testing)
+            --> vectorizes into tfidf matrix
+            --> selects/keeps most helpful features
 
         after this, the feaures and labels are put into numpy arrays, which play nice with sklearn functions
 
         4 objects are returned:
             -- training/testing features
-            -- training/testing labels
-
+            -- training/testing labels\
     """
 
     ### the words (features) and authors (labels), already largely preprocessed
     ### this preprocessing will be repeated in the text learning mini-project
+
     authors_file_handler = open(authors_file, "r")
     authors = pickle.load(authors_file_handler)
     authors_file_handler.close()
